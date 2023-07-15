@@ -1,0 +1,36 @@
+<% var data = {
+title: "Landing",
+logout: true,
+socials: true
+}; %>
+
+<%= _.template(require('./../includes/header.html').default)(data) %>
+
+<main class="main">
+  <%= _.template(require('./../includes/welcome.html').default)() %>
+  <%= _.template(require('./../includes/compare.html').default)() %>
+  <%= _.template(require('./../includes/advertise.html').default)() %>
+  <%= _.template(require('./../includes/cards.html').default)() %>
+  <div class="tabs container md:pt-[140px] pb-[20px] md:pb-[175px]" data-active-index="2">
+    <div class="nav hidden md:flex justify-center mb-[40px]">
+      <button class="nav-btn transparent mx-3" data-for="1">FAQ</button>
+      <button class="nav-btn transparent mx-3" data-for="2">Kontakt</button>
+    </div>
+    <div class="panels">
+      <div class="tab-panel block xs:block" data-index="1">
+        <%= _.template(require('./../includes/faq.html').default)() %>
+      </div>
+      <div class="tab-panel hidden" data-index="2">
+        <%= _.template(require('./../includes/contact-card.html').default)() %>
+      </div>
+    </div>
+  </div>
+  <button class="secondary group fixed right-0 top-1/2 translate-y-[-14px] hidden md:flex items-center group">
+    <svg class="transition-all fill-[#006192] group-hover:fill-[#fff] mr-[12px]" width="15" height="24" viewBox="0 0 15 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M10.249 12.304C8.86997 13.249 7.44597 14.226 7.36397 16H4.78997C4.85897 13.436 6.55897 12.213 8.20397 11.031C9.62697 10.008 11.098 8.95 11.098 7.082C11.098 4.966 9.25997 3.544 6.52397 3.544C4.88697 3.544 3.33197 4.022 2.07097 4.903L1.33497 2.669C2.79297 1.591 4.73897 1 6.85897 1C11.078 1 13.804 3.322 13.804 6.913C13.804 9.866 11.996 11.106 10.249 12.304ZM6.85897 0C4.37597 0 2.09497 0.747 0.433973 2.105C0.35539 2.1686 0.298071 2.25465 0.269662 2.35167C0.241253 2.44869 0.243106 2.55206 0.274973 2.648L1.34397 5.888C1.36934 5.96636 1.41376 6.0372 1.47323 6.09418C1.5327 6.15116 1.60538 6.1925 1.68475 6.2145C1.76412 6.2365 1.84771 6.23847 1.92802 6.22023C2.00834 6.20199 2.08288 6.16412 2.14497 6.11C3.31197 5.1 4.86597 4.544 6.52397 4.544C8.69497 4.544 10.098 5.54 10.098 7.082C10.098 8.437 8.94897 9.263 7.61997 10.219C5.91297 11.447 3.78797 12.975 3.78797 16.162V16.5C3.78797 16.6326 3.84065 16.7598 3.93442 16.8536C4.02819 16.9473 4.15536 17 4.28797 17H7.85997C8.13697 17 8.35997 16.777 8.35997 16.5V16.162C8.35997 14.812 9.44297 14.069 10.814 13.129C12.592 11.91 14.804 10.393 14.804 6.913C14.804 2.779 11.611 0 6.85897 0ZM5.99997 23C4.85897 23 3.99997 22.141 3.99997 21.001C3.99997 19.842 4.84097 19 5.99997 19C7.15897 19 7.99997 19.842 7.99997 21.001C7.99997 22.159 7.15897 23 5.99997 23ZM5.99997 18C4.28997 18 2.99997 19.29 2.99997 21.001C2.99997 22.711 4.28997 24 5.99997 24C7.70997 24 8.99997 22.711 8.99997 21.001C8.99997 19.29 7.70997 18 5.99997 18Z"/>
+    </svg>
+    <span>Jetzt Feedback</span>
+  </button>
+</main>
+
+<%= _.template(require('./../includes/footer.html').default)(data) %>

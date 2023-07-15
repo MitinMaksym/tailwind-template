@@ -1,0 +1,44 @@
+<% var list = [
+  {
+    question: "Wer reicht meine Zahnarztrechnung an die Versicherung weiter?",
+    answer: "Wer reicht meine Zahnarztrechnung an die Versicherung weiter?"
+  },
+  {
+    question: "Was bedeutet Zahnstaffel?",
+    answer: "Kann ich meine Zahnzusatzversicherung steuerlich absetzen?"
+  },
+  {
+    question: "Kann ich meine Zahnzusatzversicherung steuerlich absetzen?",
+    answer: "Kann ich meine Zahnzusatzversicherung steuerlich absetzen?"
+  },
+  {
+    question: "Ab wann kann ich die Zahnzusatzversicherung in Anspruch nehmen?",
+    answer: "Ab wann kann ich die Zahnzusatzversicherung in Anspruch nehmen?"
+  },
+  {
+    question: "Wie kann ich meinen Tarif kündigen?",
+    answer: "Wie kann ich meinen Tarif kündigen?"
+  }
+]; %>
+
+<div class="faq">
+  <h3 class="text-[30px] leading-8 font-light text-center mb-9">Gut zu wissen: Antworten auf häufig gestellte Fragen</h3>
+  <div class="flex">
+    <div class="w-100 md:w-58% md:mr-[28px]">
+      <% list.forEach(function(el) { %>
+        <div class="row relative mb-[16px] bg-gray-pastel">
+          <div class="opener relative text-[16px] py-[20px] pl-[20px] pr-[64px] cursor-pointer">
+            <%=el.question%>
+            <img class="absolute right-[20px] top-[20px] icon" src="/img/icons/select.svg" alt="icon select">
+          </div>
+          <div class="slide px-[20px] pb-[20px] hidden">
+            <%=el.answer%>
+          </div>
+        </div>
+      <% }) %>
+    </div>
+    <div class="hidden md:flex flex-1 h-[368px]">
+      <img class="object-cover w-full h-full" src="/img/faq.jpg" alt="faq">
+    </div>
+  </div>
+</div>

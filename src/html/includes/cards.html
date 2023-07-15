@@ -1,0 +1,40 @@
+<% var list = [
+  {
+    name: "Yoga – für Körper und Geist",
+    text: "Im Yoga stehen nicht nur Meditation und spirituelle Aspekte im Vordergrund, sondern auch Körperübungen. Nutzen Sie die philosophische Lehre im Alltag.",
+    img: "/img/cards/1.jpg"
+  }, {
+    name: "Resilienz",
+    text: "Ob privat oder beruflich: Kleine und große Rückschläge gehören zum Leben dazu – wir geben Ihnen die richtigen Tipps für die nötige Widerstandskraft.",
+    img: "/img/cards/2.jpg"
+  }, {
+    name: "Rückenschmerzen",
+    text: "Wir wollen, dass sie so schnell wie möglich beschwerdefrei sind. Die speziellen Übungen von Check my Back wurden von Spezialisten entwickelt.",
+    img: "/img/cards/3.jpg"
+  },
+]; %>
+
+<section class="md:bg-pink py-0 md:py-[75px]">
+  <div class="container">
+    <h2 class="text-title hidden md:block text-center mb-9 font-light">Das könnte für Sie ebenfalls interessant sein:</h2>
+    <div class="flex mx-[-15px] flex-wrap flex-col md:flex-row">
+
+      <% if (typeof(list) !== "undefined") {list.forEach(function(el, i) { %>
+      <div class="flex md:px-[15px] mb-[20px] flex-col content-center w-100 md:w-[33.33%] md:mb-0 <% if(i === 1){%>xs:bg-pink<%}%> <% if(i === 2){%>xs:bg-yellow-02<%}%>">
+        <div class="md:bg-white flex flex-1 flex-col">
+          <a href="#" class="flex w-full h-[194px]">
+            <img class="object-cover w-full h-full" src='<%=el.img%>' alt='<%=el.name%>'>
+          </a>
+          <div class="px-[20px] pt-[30px] pb-[40px] flex-1 flex flex-col">
+            <h3 class="text-[26px] leading-[32px] mb-[20px]"><%=el.name%></h3>
+            <p class="xs:min-h-[156px] mb-[10px] md:mb-9 flex-1"><%=el.text%></p>
+            <div class="flex">
+              <a class="text-blue-4 hover:underline flex items-center group" href="#"><img class="transition-transform ease-out group-hover:translate-x-[5px] mr-[12px] relative" src="/img/icons/arrow-right-blue.svg" alt="arrow right">MEHR ERFAHREN</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <% })} %>
+    </div>
+  </div>
+</section>

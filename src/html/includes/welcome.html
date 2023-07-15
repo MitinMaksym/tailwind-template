@@ -1,0 +1,55 @@
+<div class="container pb-mobile-section-vertical md:pb-section-vertical">
+  <div class="welcome relative flex flex-col-reverse content-center  mt-[-60px] md:mt-[-102px] md:mb-[17px] md:pt-[144px] md:pb-8 md:flex-row">
+    <div class="w-full md:w-51%">
+      <div class="block">
+        <span class="mb-3 md:mb-4 block text-gray-light md:text-gray-2 font-bold md:font-semibold text-[13px] leading-[18px] md:text-[20px]">Die schönste Partnerschaft beginnt immer mit einem Lächeln. </span>
+        <h1 class="text-title mb-7">
+          <span class="block font-light">Willkommen auf Ihrer Seite,</span>
+          <span class="xs:font-semibold block text-yellow-01 md:text-orange-main">Frau Schwimmer!</span>
+        </h1>
+      </div>
+      <div class="w-[445px] max-w-full pb-1">
+        <p>Was ist wirklich wichtig? Wir von der Allianz Private Krankenversicherung glauben: Einfach jeden Moment
+          genießen.
+          Wie könnte man das besser zeigen als mit einem strahlenden Lächeln?</p>
+        <p>Mit <span class="font-bold">MeinZahnschutz</span> 75 haben Sie sich garantiert für das Beste entschieden, was
+          Ihrem Lächeln passieren kann – zu
+          einem top Preis-Leistungsverhältnis. Hier finden Sie alle Details und Vorteile Ihres Vertrags, <span class="fond-bold">nützliche Tipps</span> und
+          auf Wunsch auch einen <span class="font-bold">direkten Kontakt</span> zu Ihrem persönlichen Berater.</p>
+        <p>Haben Sie schon Ihr <span class="font-bold">persönliches Willkommen-Video</span> gesehen? Unser kleiner Gruß,
+          den wir zum Einstand vorbereitet
+          haben, ist startbereit. Viel Spaß!</p>
+      </div>
+      <div class="md:flex">
+        <button class="xs:w-full ease-in duration-100  video-opener">Willkommen-Video abspielen</button>
+      </div>
+    </div>
+    <div class="relative mx-[-15px] md:mb-0 md:mx-0 md:left-[51%] md:top-0 md:bottom-0 md:absolute">
+      <picture class="max-h-full md:h-full flex justify-end items-end md:block">
+        <source srcset="/img/welcome/1.png" media="(min-width: 768px)" >
+        <source srcset="/img/welcome/1-mobile.png" media="(max-width: 767px)" >
+        <img class="h-full w-full max-w-none md:object-contain" src="/img/welcome/1.png" alt="MDN">
+      </picture>
+
+      <div class="relative mt-[-81px] mb-[32px] mx-auto w-[328px] md:margin-0 md:absolute md:bottom-[167px] md:left-0 md:w-[408px] md:h-[253px] bg-white p-[5px]">
+        <button class="bg-transparent z-10 p-0 rounded-full absolute left-1/2 top-1/2 translate-x-[-50%] translate-y-[-50%] video-opener">
+          <svg width="85" height="85" viewBox="0 0 85 85" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="85" height="85" rx="42.5" fill="white"/>
+            <path d="M53 43.5L33 29L33 58L53 43.5Z" fill="#122B54"/>
+          </svg>
+        </button>
+        <div class="after:bg-blue-3/60 after:absolute after:top-0 after:left-0 after:w-full after:h-full relative w-full h-full flex video-container">
+          <video src="/uploads/video02.mp4" class="h-full w-full object-cover"></video>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+<div class="hidden fixed left-0 top-0 w-full h-full z-20 justify-center items-center" id="video">
+  <span class="fixed left-0 top-0 w-full h-full bg-blue-3/60 video-close"></span>
+  <div class="bg-white relative z-10 w-[1000px] max-w-[90%] p-[10px] video-container">
+    <video src="/uploads/video02.mp4" class="h-full w-full object-cover h-[auto]" controls></video>
+    <button class="hover:bg-transparent absolute w-[40px] h-[40px] rotate-45 bg-transparent right-0 top-[-50px] video-close before:absolute after:absolute before:w-[40px] before:h-[2px] after:w-[2px] after:h-[40px] before:bg-white after:bg-white after:translate-y-[-50%] before:translate-x-[-50%] before:left-1/2 after:left-[19px] before:top:-[19px] after:top--1/2"></button>
+  </div>
+</div>

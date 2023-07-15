@@ -1,0 +1,189 @@
+<% var list = [
+  {
+    "1": {
+      text: "Zahnersatz bei Regelversorgung",
+      percent: "100%",
+      hint: "Hint text"
+    },
+    "2": {
+      text: "Zahnersatz <br/>inkl. Angst-und Schmerzausschaltung",
+      percent: "75%",
+      hint: "Hint text"
+    }
+  },
+  {
+    "1": {
+      text: "Zahnbehandlung",
+      percent: "100%",
+      hint: "Hint text"
+    },
+    "2": {
+      text: "Innovationsgarantie",
+      hint: "Hint text"
+    }
+  },
+  {
+    "1": {
+      text: "Bleaching",
+      percent: "100%",
+      hint: "Hint text"
+    },
+    "2": {
+      text: "Kieferorthopädie bei Unfall oder schwerer Erkrankung ",
+      percent: "75%",
+      hint: "Hint text"
+    }
+  },
+  {
+    "1": {
+      text: "Professionelle Zahnreinigung + Prophylaxe",
+      percent: "100%",
+      hint: "Hint text"
+    },
+    "2": {
+      text: "Aufbiss-Schienen ",
+      percent: "75%",
+      hint: "Hint text"
+    }
+  }, {
+    "1": {
+      text: "Angst-und Schmerzausschaltung<br/> bei Zahnbehandlung",
+      percent: "100%",
+      hint: "Hint text"
+    },
+    "2": {
+      text: "Maximale Erstattung<br/>1.000€ / 1.500€ / 2.000€ / unbegrenzt",
+      percent: "",
+      hint: "Hint text"
+    }
+  }
+]; %>
+
+<section class="container py-mobile-section-vertical md:py-section-vertical tabs" data-active-index="1">
+  <span class="hidden hint-overlay z-20 fixed bg-black/50 left-0 top-0 bottom-0 right-0"></span>
+  <div class="relative">
+    <h2 class="text-title font-light text-center mb-8">
+      <span class="block">Mit jedem Klick alles im Blick:</span>
+      <span class="block text-orange-main">MeinZahnschutz {75}</span>
+    </h2>
+    <div class="nav flex md:justify-center mb-[40px] w-[920px] max-w-full mx-auto border-b border-b-gray-light2 xs:overflow-auto xs:pb-[10px]">
+      <button data-for="1" class="nav-btn xs:py-[8px] xs:px-[20px] xs:border xs:border-blue-dark xs:rounded-[5px] xs:whitespace-nowrap transparent xs:mx-[8px] md:mx-3 bg-transparent text-gray-dark">Vertragsdetails</button>
+      <button data-for="2" class="nav-btn xs:py-[8px] xs:px-[20px] xs:border xs:border-blue-dark xs:rounded-[5px] xs:whitespace-nowrap transparent xs:mx-[8px] md:mx-3 bg-transparent text-gray-dark">Ihre Tarifleistungen</button>
+      <button data-for="3" class="nav-btn xs:py-[8px] xs:px-[20px] xs:border xs:border-blue-dark xs:rounded-[5px] xs:whitespace-nowrap transparent xs:mx-[8px] md:mx-3 bg-transparent text-gray-dark">Nicht im Tarif enthalten</button>
+    </div>
+    <div class="hidden rounded-full w-[150px] h-[150px] md:flex flex-col items-center text-center bg-blue-pastel justify-center rotate-[22deg] p-4 absolute right-4 top-3">
+      <span class="font-bold text-blue-dark text-[21px] leading-[21px] pb-2 mb-2 border-b border-black/10">Ihre Übersicht?</span>
+      <span class=" leading-[20px] text-orange-main">Gibt’s auch in der App!</span>
+    </div>
+  </div>
+  <div class="panels">
+    <div class="tab-panel hidden" data-index="1">
+      <table class="border-collapse w-full text-center">
+        <% list.forEach(function(el) { %>
+          <tr>
+            <td class="w-1/2 border-r-[16px] border-b-2 border-white bg-gray-pastel">
+              <div class="min-h-[150px] p-2 flex flex-col items-center justify-center">
+                <span class="hyphens-auto"  lang="de"><%=el["1"].text%></span>
+                <% if (typeof(el["1"].percent) !== "undefined") { %>
+                  <span class="text-blue-dark"><%=el["1"].percent%></span>
+                <% } %>
+                <div class="hint mt-3 relative">
+                  <button class="hint-opener transparent radius-full">
+                    <img src="/img/icons/info.svg" alt="icon faq">
+                  </button>
+                  <div class="hidden hint-body absolute left-1/2 top-[100%] mt-[20px] bg-white w-[150px] md:w-[250px] p-[15px] translate-x-[-50%]"><span class="top-triangle"></span><%=el["1"].hint%></div>
+                </div>
+              </div>
+            </td>
+            <td class="w-1/2 border-l-[16px] border-b-2 border-white bg-gray-pastel">
+              <div class="min-h-[150px] p-2 flex flex-col items-center justify-center">
+                <span class="hyphens-auto"  lang="de"><%=el["2"].text%></span>
+                <% if (typeof(el["2"].percent) !== "undefined") { %>
+                <span class="text-blue-dark"><%=el["2"].percent%></span>
+                <% } %>
+                <div class="hint mt-3 relative">
+                  <button class="hint-opener transparent radius-full">
+                    <img src="/img/icons/info.svg" alt="icon faq">
+                  </button>
+                  <div class="hidden hint-body absolute left-1/2 top-[100%] mt-[20px] bg-white w-[150px] md:w-[250px] p-[15px] translate-x-[-50%]"><span class="top-triangle"></span><%=el["2"].hint%></div>
+                </div>
+              </div>
+            </td>
+          </tr>
+        <% }) %>
+      </table>
+    </div>
+    <div class="tab-panel hidden" data-index="2">
+      <table class="border-collapse w-full text-center">
+        <% if (typeof(list) !== "undefined") {list.forEach(function(el) { %>
+          <tr>
+            <td class="w-1/2 border-r-[16px] border-b-2 border-white bg-gray-pastel">
+              <div class="min-h-[150px] p-2 flex flex-col items-center justify-center">
+                <span class="hyphens-auto"  lang="de"><%=el["1"].text%></span>
+                <% if (typeof(el["1"].percent) !== "undefined") { %>
+                  <span class="text-blue-dark"><%=el["1"].percent%></span>
+                <% } %>
+                <div class="hint mt-3 relative">
+                  <button class="hint-opener transparent radius-full">
+                    <img src="/img/icons/info.svg" alt="icon faq">
+                  </button>
+                  <div class="hidden hint-body absolute left-1/2 top-[100%] mt-[20px] bg-white w-[150px] md:w-[250px] p-[15px] translate-x-[-50%]"><span class="top-triangle"></span><%=el["1"].hint%></div>
+                </div>
+              </div>
+            </td>
+            <td class="w-1/2 border-l-[16px] border-b-2 border-white bg-gray-pastel">
+              <div class="min-h-[150px] p-2 flex flex-col items-center justify-center">
+                <span class="hyphens-auto"  lang="de"><%=el["2"].text%></span>
+                <% if (typeof(el["2"].percent) !== "undefined") { %>
+                <span class="text-blue-dark"><%=el["2"].percent%></span>
+                <% } %>
+                <div class="hint mt-3 relative">
+                  <button class="hint-opener transparent radius-full">
+                    <img src="/img/icons/info.svg" alt="icon faq">
+                  </button>
+                  <div class="hidden hint-body absolute left-1/2 top-[100%] mt-[20px] bg-white w-[150px] md:w-[250px] p-[15px] translate-x-[-50%]"><span class="top-triangle"></span><%=el["2"].hint%></div>
+                </div>
+              </div>
+            </td>
+          </tr>
+        <% })} %>
+      </table>
+    </div>
+    <div class="tab-panel hidden" data-index="3">
+      <table class="border-collapse w-full text-center">
+        <% if (typeof(list) !== "undefined") {list.forEach(function(el) { %>
+          <tr>
+            <td class="w-1/2 border-r-[16px] border-b-2 border-white bg-gray-pastel">
+              <div class="min-h-[150px] p-2 flex flex-col items-center justify-center">
+                <span class="hyphens-auto"  lang="de"><%=el["1"].text%></span>
+                <% if (typeof(el["1"].percent) !== "undefined") { %>
+                  <span class="text-blue-dark"><%=el["1"].percent%></span>
+                <% } %>
+                <div class="hint mt-3 relative">
+                  <button class="hint-opener transparent radius-full">
+                    <img src="/img/icons/info.svg" alt="icon faq">
+                  </button>
+                  <div class="hidden hint-body absolute left-1/2 top-[100%] mt-[20px] bg-white w-[150px] md:w-[250px] p-[15px] translate-x-[-50%]"><span class="top-triangle"></span><%=el["1"].hint%></div>
+                </div>
+              </div>
+            </td>
+            <td class="w-1/2 border-l-[16px] border-b-2 border-white bg-gray-pastel">
+              <div class="min-h-[150px] p-2 flex flex-col items-center justify-center">
+                <span class="hyphens-auto"  lang="de"><%=el["2"].text%></span>
+                <% if (typeof(el["2"].percent) !== "undefined") { %>
+                <span class="text-blue-dark"><%=el["2"].percent%></span>
+                <% } %>
+                <div class="hint mt-3 relative">
+                  <button class="hint-opener transparent radius-full">
+                    <img src="/img/icons/info.svg" alt="icon faq">
+                  </button>
+                  <div class="hidden hint-body absolute left-1/2 top-[100%] mt-[20px] bg-white w-[150px] md:w-[250px] p-[15px] translate-x-[-50%]"><span class="top-triangle"></span><%=el["2"].hint%></div>
+                </div>
+              </div>
+            </td>
+          </tr>
+        <% })} %>
+      </table>
+    </div>
+  </div>
+</section>

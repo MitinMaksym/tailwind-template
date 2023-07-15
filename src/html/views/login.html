@@ -1,0 +1,96 @@
+<% var data={ title: "Login" , }; %>
+  <!-- <%= _.template(require('./../includes/header.html').default)(data) %>
+
+<main class="main flex items-center bg-gray-pastel login">
+  <div class="container">
+    <div class="bg-white rounded-r-lg">
+      <div class="flex content-center">
+        <div class="object-cover w-32% hidden md:flex">
+          <img src="/img/login/01.jpg" alt="login image">
+        </div>
+        <div class="flex-1 p-4 md:py-100px md:px-60px">
+          <h1 class="text-blue-dark text-title mb-4">
+            <span class="block">Frau Schwimmer</span>
+            <span class="block font-light">hier einfach und sicher einloggen.</span>
+          </h1>
+          <span class="block mb-7">Bitte geben Sie Ihr Geburtsdatum ein:</span>
+          <div>
+            <%= _.template(require('./../includes/input.html').default)({id: "birthday"}) %>
+            <div class="mb-6">
+              <%= _.template(require('./../includes/checkbox.html').default)({id: "agreement", text: "Ja, ich stimme der Auswertung meiner Seitennutzung zur Optimierung meiner persönlichen Beratung zu."}) %>
+            </div>
+            <div class="flex">
+              <button class="ease-in duration-100 submit" disabled>EINLOGGEN</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<%= _.template(require('./../includes/footer.html').default)(data) %> -->
+  <% var data={ title: "Login" }; %>
+    <!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Login</title>
+    </head>
+
+    <body>
+
+      <div class="page">
+        <%= _.template(require('./../includes/header.html').default)(data) %>
+          <main class="main bg-no-repeat bg-cover" style="background-image: url('/img/login/01.jpg')">
+            <div
+              class="container login pt-[100px] flex justify-end lg:justify-center lg:pt-[50px] md:pt-[40px] sm:pt-[40px]">
+              <div class="relative max-w-[630px] min-h-[480px] bg-white opacity-80 py-[30px] px-[50px]">
+                <h1 class="text-[40px] text-gray font-bold leading-[80%] mb-4 md:text-[22px] md:mb-1">Auf ins Abenteuer
+                  Zukunft
+                </h1>
+                <div class="leading-[20px] mb-4 gray text-gray md:text-[14px] md:mb-2">Bitte geben Sie Ihren 6-stelligen
+                  Zugangscode aus dem
+                  Brief ein.</div>
+                <form class="text-grayLight2">
+                  <label for="code"
+                    class="text-redPrimary text-[20px] leading-normal spacing-[0.015px] block mb-4 cursor-pointer md:text-[15px] md:mb-2">
+                    Code hier eingeben
+                  </label>
+                  <input id="code" type="number" autocomplete="off"
+                    class="bg-grayLight w-[70%] h-[50px] block border-grayDark border-b-2 p-3 outline-transparent mb-[10px] md:mb-2 sm:w-full" />
+                  <div class="mb-[10px] text-[13px] leading-normal">Mit Nutzung der Webseiten auf meine-Zukunft.de
+                    erklären Sie, dass
+                    Sie die
+                    speziellen
+                    Datenschutzhinweise der Sparkasse Emsland zur Verwendung dieses Onlineangebots zur Kenntnis genommen
+                    haben.</div>
+                  <div class="mb-[10px]">
+                    <%= _.template(require('./../includes/checkbox.html').default)({id: "checkbox1" ,
+                      text: "Ich stimme der Erstellung für mich personalisierter Webseiteninhalte zu und habe die weiteren Hinweise zur Personalisierung meiner Webseiten verstanden."
+                      }) %>
+                  </div>
+                  <div class="mb-[15px]">
+                    <%= _.template(require('./../includes/checkbox.html').default)({id: "checkbox2" ,
+                      text: "Ich stimme der cookiefreien Messung der Aktivitäten in meiner personalisierten Webseite zu."
+                      }) %>
+                  </div>
+                  <button class="button submit flex gap-[6px] items-center h-[44px] py-[7px] px-[20px]"
+                    disabled><span>Bestätigen</span><img src="/img/icons/ic-play.svg" /></button>
+                </form>
+                <div
+                  class="text-white absolute bottom-0 left-[50%] font-bold translate-y-[50%] 
+                  leading-[120%] flex items-center justify-center text-center bg-redPrimary w-[138px] h-[138px] rounded-full md:w-[112px] md:h-[112px] md:left-[100%] md:-translate-x-[100%] md:translate-y-[25%] ">
+                  <span class="block max-w-[113px] lg:text-[14px] lg:max-w-[90px]">Persönliches Video ansehen</span>
+
+                </div>
+              </div>
+            </div>
+          </main>
+          <%= _.template(require('./../includes/footer.html').default)(data) %>
+      </div>
+    </body>
+
+    </html>

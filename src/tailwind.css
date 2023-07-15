@@ -1,0 +1,59 @@
+@font-face {
+  font-family: "Sparkasse";
+  src: url("./fonts/Sparkasse-Bold.eot");
+  src:
+    url("./fonts/Sparkasse-Bold.eot?#iefix") format("embedded-opentype"),
+    url("./fonts/Sparkasse-Bold.woff2") format("woff2"),
+    url("./fonts/Sparkasse-Bold.woff") format("woff"),
+    url("./fonts/Sparkasse-Bold.ttf") format("truetype");
+
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Sparkasse";
+  src: url("./fonts/Sparkasse-Regular.eot");
+  src:
+    url("./fonts/Sparkasse-Regular.eot?#iefix") format("embedded-opentype"),
+    url("./fonts/Sparkasse-Regular.woff2") format("woff2"),
+    url("./fonts/Sparkasse-Regular.woff") format("woff"),
+    url("./fonts/Sparkasse-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: Sparkasse;
+  }
+
+  body {
+    @apply text-[18px] leading-[150%] text-gray bg-white;
+  }
+
+  input[type="number"] {
+    -moz-appearance: textfield;
+  }
+
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+  }
+}
+
+@layer components {
+  .container {
+    @apply max-w-[990px];
+  }
+
+  .page {
+    @apply flex flex-col min-h-[100vh] overflow-hidden;
+  }
+}
